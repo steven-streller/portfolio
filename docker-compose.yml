@@ -1,0 +1,9 @@
+version: "3"
+services:
+  webserver:
+    image: nginx:alpine
+    container_name: portfolio
+    volumes:
+      - ./public:/usr/share/nginx/html
+    expose:
+      - "80"
