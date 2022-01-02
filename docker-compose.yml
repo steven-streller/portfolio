@@ -1,9 +1,23 @@
-version: "3"
+version: "3.3"
 services:
-  webserver:
-    image: nginx:alpine
-    container_name: portfolio
+  web:
+    image: nginx:latest
+    restart: always
     volumes:
-      - ./public:/usr/share/nginx/html
-    expose:
-      - "80"
+      - ./public:/usr/share/nginx/html/:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portfolio.entrypoints=http"
+      - "traefik.http.routers.portfolio.rule=Host(`streller.net`)"
+      - "traefik.http.routers.portfolio.middlewares=https-redirect@file"
+      - "traefik.http.routers.portfolio-sec.entrypoints=https"
+      - "traefik.http.routers.portfolio-sec.rule=Host(`streller.net`)"
+      - "traefik.http.routers.portfolio-sec.tls=true"
+      - "traefik.http.routers.portfolio-sec.tls.options=myTLSOptions@file"
+      - "traefik.http.routers.portfolio-sec.tls.certresolver=le"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
