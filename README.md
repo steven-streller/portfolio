@@ -18,7 +18,7 @@ Der Dev-Server läuft auf `http://localhost:5173`
 
 ```bash
 docker pull ghcr.io/steven-streller/portfolio:latest
-docker run -d --name portfolio -p 8080:80 ghcr.io/steven-streller/portfolio:latest
+docker run -d --name portfolio -p 8080:8080 ghcr.io/steven-streller/portfolio:latest
 ```
 
 Alternativ mit Branch-Tag:
@@ -30,7 +30,7 @@ docker pull ghcr.io/steven-streller/portfolio:main
 
 ```bash
 docker build -t portfolio:latest .
-docker run -d --name portfolio -p 8080:80 portfolio:latest
+docker run -d --name portfolio -p 8080:8080 portfolio:latest
 ```
 
 Die Website ist dann unter `http://localhost:8080` erreichbar.
