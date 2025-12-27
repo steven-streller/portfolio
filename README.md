@@ -14,15 +14,22 @@ Der Dev-Server läuft auf `http://localhost:5173`
 
 ## Production Build
 
-### Docker Image bauen
+### Image von GitHub Container Registry verwenden
+
+```bash
+docker pull ghcr.io/steven-streller/portfolio:latest
+docker run -d --name portfolio -p 8080:80 ghcr.io/steven-streller/portfolio:latest
+```
+
+Alternativ mit Branch-Tag:
+```bash
+docker pull ghcr.io/steven-streller/portfolio:main
+```
+
+### Eigenes Docker Image bauen
 
 ```bash
 docker build -t portfolio:latest .
-```
-
-### Container starten
-
-```bash
 docker run -d --name portfolio -p 8080:80 portfolio:latest
 ```
 
