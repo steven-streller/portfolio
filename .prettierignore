@@ -1,0 +1,9 @@
+node_modules
+dist
+.git
+package-lock.json
+*.min.js
+*.min.css
+public/css/font-awesome
+infra
+.github

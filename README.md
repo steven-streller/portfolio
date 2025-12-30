@@ -22,6 +22,7 @@ docker run -d --name portfolio -p 8080:8080 ghcr.io/steven-streller/portfolio:la
 ```
 
 Alternativ mit Branch-Tag:
+
 ```bash
 docker pull ghcr.io/steven-streller/portfolio:main
 ```
