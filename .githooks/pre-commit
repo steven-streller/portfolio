@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo "🔍 Running pre-commit checks..."
+
+# Check if make is available
+if ! command -v make &> /dev/null; then
+    echo "❌ make not found. Please install make."
+    exit 1
+fi
+
+# Run tests (format-check + build)
+echo "🧪 Running tests..."
+if ! make test; then
+    echo ""
+    echo "❌ Pre-commit checks failed!"
+    echo "💡 Run 'make format' to fix formatting issues."
+    exit 1
+fi
+
+echo "✅ All pre-commit checks passed!"
+exit 0
