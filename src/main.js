@@ -12,7 +12,6 @@ import '@fontsource/roboto/700.css';
 import '@fontsource/poppins/600.css';
 
 // Import JavaScript dependencies
-import $ from 'jquery';
 import 'bootstrap';
 import AOS from 'aos';
 
@@ -27,8 +26,6 @@ import masterprojektPdf from './assets/documents/Masterprojekt.pdf';
 import masterseminarPdf from './assets/documents/Masterseminar.pdf';
 import softwarearchitekturenPdf from './assets/documents/Softwarearchitekturen.pdf';
 
-// Make jQuery available globally for Bootstrap
-window.$ = window.jQuery = $;
 
 // Initialize AOS animations
 AOS.init({
